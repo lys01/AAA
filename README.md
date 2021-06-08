@@ -2,15 +2,7 @@
 
 lxk0309 ： https://github.com/chinnkarahoi/jd_scripts
 
-jo : https://github.com/joinchiefo/dog
-
-tubie75 : https://github.com/tubie75/scripts
-
-dantes : https://github.com/dantes1016/gaqd
-
-shuye73 : https://github.com/wuzhi03/MyActions
-
-inoyna : https://github.com/inoyna11/jd28
+jo : https://github.com/a01191/dog.git
 
 wulove : https://github.com/wulove/my_scripts/tree/master
 
