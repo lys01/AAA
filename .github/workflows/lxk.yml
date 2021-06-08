@@ -2,7 +2,7 @@
 name: lxk
 on:
   schedule:
-    - cron: '0 15,4 * * *'
+    - cron: '0 13 * * *'
   workflow_dispatch:
   watch:
     types: started
