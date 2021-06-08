@@ -1,0 +1,30 @@
+# File: .github/workflows/repo-sync.yml
+name: jo
+on:
+  schedule:
+    - cron: '3 2,6,11,17 * * *'
+  workflow_dispatch:
+  watch:
+    types: started
+  repository_dispatch:
+    types: jo
+jobs:
+  repo-sync:
+    env:
+      PAT: ${{ github.event.client_payload.PAT || secrets.PAT }} #此处PAT需要申请，教程详见：https://www.jianshu.com/p/bb82b3ad1d11
+      dst_key: ${{ secrets.GITEE_PRIVATE_KEY }} # 我自己同步到gitee使用，其他人可忽略
+    runs-on: ubuntu-latest
+    if: github.event.repository.owner.id == github.event.sender.id
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          persist-credentials: false
+
+      - name: 开始自动同步
+        uses: repo-sync/github-sync@v2
+        if: env.PAT
+        with:
+          source_repo: "https://gitee.com/joinmogul/dog.git"
+          source_branch: "main"
+          destination_branch: "jo"
+          github_token: ${{ github.event.client_payload.PAT || secrets.PAT }}
