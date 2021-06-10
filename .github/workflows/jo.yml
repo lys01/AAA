@@ -24,7 +24,8 @@ jobs:
         uses: repo-sync/github-sync@v2
         if: env.PAT
         with:
-          source_repo: "https://gitee.com/joinmogul/dog.git"
+          #source_repo: "https://gitee.com/joinmogul/dog.git"
+          source_repo: "https://github.com/a01191/dog.git"
           source_branch: "main"
           destination_branch: "jo"
           github_token: ${{ github.event.client_payload.PAT || secrets.PAT }}
