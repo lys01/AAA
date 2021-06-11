@@ -2,7 +2,7 @@
 name: jo
 on:
   schedule:
-    - cron: '3 19 * * *'
+    - cron: '3 14 * * *'
   workflow_dispatch:
   watch:
     types: started
