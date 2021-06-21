@@ -1,5 +1,5 @@
 # File: .github/workflows/repo-sync.yml
-name: dust
+name: jddj
 on:
   schedule:
     - cron: '42 14 * * *'
@@ -7,7 +7,7 @@ on:
   watch:
     types: started
   repository_dispatch:
-    types: dust
+    types: jddj
 jobs:
   repo-sync:
     env:
@@ -24,7 +24,7 @@ jobs:
         uses: repo-sync/github-sync@v2
         if: env.PAT
         with:
-          source_repo: "https://github.com/seamly888/1Alie.git"
-          source_branch: "dust"
-          destination_branch: "dust"
+          source_repo: "https://github.com/passerby-b/JDDJ.git"
+          source_branch: "main"
+          destination_branch: "jddj"
           github_token: ${{ github.event.client_payload.PAT || secrets.PAT }}
