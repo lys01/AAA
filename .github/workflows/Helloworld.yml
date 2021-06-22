@@ -1,5 +1,5 @@
 # File: .github/workflows/repo-sync.yml
-name: lxk
+name: he
 on:
   schedule:
     - cron: '0 13 * * *'
@@ -7,7 +7,7 @@ on:
   watch:
     types: started
   repository_dispatch:
-    types: lxk
+    types: he
 jobs:
   repo-sync:
     env:
@@ -24,7 +24,7 @@ jobs:
         uses: repo-sync/github-sync@v2
         if: env.PAT
         with:
-          source_repo: "https://github.com/chinnkarahoi/jd_scripts.git"
-          source_branch: "master"
-          destination_branch: "lxk"
+          source_repo: "https://github.com/JDHelloWorld/jd_scripts.git"
+          source_branch: "main"
+          destination_branch: "he"
           github_token: ${{ github.event.client_payload.PAT || secrets.PAT }}
