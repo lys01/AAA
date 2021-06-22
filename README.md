@@ -1,5 +1,7 @@
 项目已作废,仅为备份d_dust,s_shuye,a_Alie,K_kie
 
+hellworld :  https://github.com/JDHelloWorld/jd_scripts.git
+
 lxk0309 ： https://github.com/chinnkarahoi/jd_scripts
 
 no1gc1 : https://github.com/no1gc1/acdog
