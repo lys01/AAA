@@ -2,6 +2,8 @@
 
 hellworld :  https://github.com/JDHelloWorld/jd_scripts.git
 
+panghu ： https://github.com/panghu999/jd_scripts.git
+
 lxk0309 ： https://github.com/chinnkarahoi/jd_scripts
 
 no1gc1 : https://github.com/no1gc1/acdog
