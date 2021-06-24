@@ -10,6 +10,8 @@ no1gc1 : https://github.com/no1gc1/acdog
 
 jo : https://github.com/a01191/dog.git
 
+photonmang ： https://github.com/photonmang/quantumultX
+
 wulove : https://github.com/wulove/my_scripts/tree/master
 
 Weoux : https://github.com/Wenmoux/scripts
