@@ -16,6 +16,8 @@ wulove : https://github.com/wulove/my_scripts/tree/master
 
 Weoux : https://github.com/Wenmoux/scripts
 
+star26 : https://github.com/star261/jd
+
 zoo动物园 : https://github.com/zooPanda/zoo
 
 hyzaw : https://github.com/hyzaw/scripts.git
