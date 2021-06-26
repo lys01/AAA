@@ -6,9 +6,7 @@ panghu ： https://github.com/panghu999/jd_scripts.git
 
 lxk0309 ： https://github.com/chinnkarahoi/jd_scripts
 
-no1gc1 : https://github.com/no1gc1/acdog
-
-jo : https://github.com/a01191/dog.git
+no1gc1 : https://github.com/a0011006/dd.git
 
 photonmang ： https://github.com/photonmang/quantumultX
 
