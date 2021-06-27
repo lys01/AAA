@@ -1,5 +1,5 @@
 # File: .github/workflows/repo-sync.yml
-name: jo
+name: panghu
 on:
   schedule:
     - cron: '3 14 * * *'
@@ -7,7 +7,7 @@ on:
   watch:
     types: started
   repository_dispatch:
-    types: jo
+    types: panghu
 jobs:
   repo-sync:
     env:
@@ -25,7 +25,8 @@ jobs:
         if: env.PAT
         with:
           #source_repo: "https://gitee.com/joinmogul/dog.git"
-          source_repo: "https://github.com/a01191/dog.git"
-          source_branch: "main"
-          destination_branch: "jo"
+          #source_repo: "https://github.com/a01191/dog.git"
+          source_repo: "https://github.com/panghu999/jd_scripts.git"
+          source_branch: "master"
+          destination_branch: "ph"
           github_token: ${{ github.event.client_payload.PAT || secrets.PAT }}
