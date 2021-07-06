@@ -6,6 +6,8 @@ panghu ： https://github.com/panghu999/jd_scripts.git
 
 lxk0309 ： https://github.com/chinnkarahoi/jd_scripts
 
+yuannian : https://github.com/yuannian1112/jd_scripts.git
+
 no1gc1 : https://github.com/a0011006/dd.git
 
 photonmang ： https://github.com/photonmang/quantumultX
