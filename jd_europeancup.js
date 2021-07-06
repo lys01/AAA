@@ -1,12 +1,21 @@
 /*
-更新地址：https://raw.githubusercontent.com/Wenmoux/scripts/wen/jd/jd_ddnc_farmpark.js
-号1默认给wuzhi助力 后续号给号1
-入口 https://lzdz-isv.isvjcloud.com/dingzhi/hisense/europeancup/activity/7431935?activityId=901100032442101)
-============Quantumultx===============
+欧洲狂欢杯
+活动地址: https://lzdz-isv.isvjcloud.com/dingzhi/hisense/europeancup/activity/7431935?activityId=901100032442101
+活动时间：6.21-7.12
+更新时间：2021-07-4 12:00
+脚本兼容: QuantumultX, Surge,Loon, JSBox, Node.js
+=================================Quantumultx=========================
 [task_local]
 #欧洲狂欢杯
-57 59 9  * * * https://raw.githubusercontent.com/Wenmoux/scripts/wen/jd/jd_europeancup.js, tag=欧洲狂欢杯, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/jd.png, enabled=true
-*/
+59 9 * * * https://raw.githubusercontent.com/jiulan/platypus/main/scripts/jd_europeancup.js, tag=欧洲狂欢杯, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/jd.png, enabled=true
+=================================Loon===================================
+[Script]
+cron "59 9 * * *" script-path=https://raw.githubusercontent.com/jiulan/platypus/main/scripts/jd_europeancup.js,tag=欧洲狂欢杯
+===================================Surge================================
+欧洲狂欢杯 = type=cron,cronexp="59 9 * * *",wake-system=1,timeout=3600,script-path=https://raw.githubusercontent.com/jiulan/platypus/main/scripts/jd_europeancup.js
+====================================小火箭=============================
+欧洲狂欢杯 = type=cron,script-path=https://raw.githubusercontent.com/jiulan/platypus/main/scripts/jd_europeancup.js, cronexpr="59 9 * * *", timeout=3600, enable=true
+ */
 const $ = new Env('狂欢欧洲杯');
 //Node.js用户请在jdCookie.js处填写京东ck;
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
@@ -41,6 +50,7 @@ $.shareuuid = []
         }
         for (let i = 0; i < cookiesArr.length; i++) {
             cookie = cookiesArr[i];
+            await $.wait(2000)
             if (cookie) {
                 $.UserName = decodeURIComponent(cookie.match(/pt_pin=([^; ]+)(?=;?)/) && cookie.match(/pt_pin=([^; ]+)(?=;?)/)[1])
                 $.index = i + 1;
@@ -107,7 +117,7 @@ $.shareuuid = []
 
         if (message.length != 0) {
             if ($.isNode()) {
-                await notify.sendNotify("欧洲狂欢杯", `${message}\n 欧洲杯入口：https://lzdz-isv.isvjcloud.com/dingzhi/hisense/europeancup/activity/7431935?activityId=901100032442101&shareUuid=b7f58330cb0844b485afacbdea3c7bca&adsource=null&initHash=/home&shareuserid4minipg=8A+Mf3SBYE8spQtvzQ2VLE7oeVP9kq2pYSH90mYt4m3fwcJlClpxrfmVYaGKuquQkdK3rLBQpEQH9V4tdrrh0w==&shopid=undefined&lng=107.146945&lat=33.255267&sid=cad74d1c843bd47422ae20cadf6fe5aw&un_area=8_573_6627_52446\n\n吹水群：https://t.me/wenmouxx`);
+                await notify.sendNotify("欧洲狂欢杯", `${message}\n `);
             } else {
                 $.msg($.name, "", '欧洲狂欢杯' + message)
             }
@@ -289,7 +299,7 @@ function adlog() {
     })
 }
 
-// 获得用户信息  
+// 获得用户信息
 function getUserInfo() {
     return new Promise(resolve => {
         let body = `pin=${encodeURIComponent($.pin)}`
