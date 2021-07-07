@@ -12,6 +12,8 @@ yuannian : https://github.com/yuannian1112/jd_scripts.git
 
 no1gc1 : https://github.com/a0011006/dd.git
 
+a00108 : https://github.com/a00108/dd
+
 photonmang ： https://github.com/photonmang/quantumultX
 
 wulove : https://github.com/wulove/my_scripts/tree/master
