@@ -33,6 +33,8 @@ const $ = new Env('宠汪汪偷好友积分与狗粮');
 const notify = $.isNode() ? require('./sendNotify') : '';
 //Node.js用户请在jdCookie.js处填写京东ck;
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
+const validator=require('./JDJRValidator_Pure.js');
+$.get=validator.injectToRequest($.get.bind($))
 let nowTimes = new Date(new Date().getTime() + new Date().getTimezoneOffset()*60*1000 + 8*60*60*1000);
 //IOS等用户直接用NobyDa的jd cookie
 let cookiesArr = [], cookie = '';
@@ -47,9 +49,7 @@ if ($.isNode()) {
 let message = '', subTitle = '';
 
 let jdNotify = false;//是否开启静默运行，false关闭静默运行(即通知)，true打开静默运行(即不通知)
-
-let jdJoyHelpFeed = false;//是否给好友喂食，false为不给喂食，true为给好友喂食，默认给好友喂食
-
+let jdJoyHelpFeed = true;//是否给好友喂食，false为不给喂食，true为给好友喂食，默认给好友喂食
 let jdJoyStealCoin = true;//是否偷好友积分与狗粮，false为否，true为是，默认是偷
 const JD_API_HOST = 'https://jdjoy.jd.com/pet';
 //是否给好友喂食
@@ -288,8 +288,8 @@ async function helpFriendsFeed() {
 function getFriends(currentPage = '1') {
   return new Promise(resolve => {
     let opt = {
-      url: `//draw.jdfcloud.com//common/pet/api/getFriends?itemsPerPage=20&currentPage=${currentPage * 1}&reqSource=weapp`,
-      // url: `//draw.jdfcloud.com/common/pet/getPetTaskConfig?reqSource=h5&invokeKey=Oex5GmEuqGep1WLC`,
+      url: `//draw.jdfcloud.com//common/pet/api/getFriends?itemsPerPage=20&currentPage=${currentPage * 1}&reqSource=weapp&invokeKey=NRp8OPxZMFXmGkaE`,
+      // url: `//draw.jdfcloud.com/common/pet/getPetTaskConfig?reqSource=h5&invokeKey=NRp8OPxZMFXmGkaE`,
       method: "GET",
       data: {},
       credentials: "include",
@@ -320,6 +320,7 @@ function getFriends(currentPage = '1') {
           // console.log('JSON.parse(data)', JSON.parse(data))
           if (data) {
             $.getFriendsData = JSON.parse(data);
+            console.log(data);
           } else {
             console.log(`京豆api返回数据为空，请检查自身原因`)
           }
@@ -366,6 +367,7 @@ function enterFriendRoom(friendPin) {
           // console.log('进入好友房间', JSON.parse(data))
           if (data) {
             data = JSON.parse(data);
+            console.log(data);
             console.log(`可偷狗粮：${data.data.stealFood}`)
             console.log(`可偷积分：${data.data.friendHomeCoin}`)
           } else {
@@ -474,7 +476,7 @@ function getRandomFood(friendPin) {
 function getCoinChanges() {
   return new Promise(resolve => {
     let opt = {
-      url: `//jdjoy.jd.com/common/pet/getCoinChanges?changeDate=${Date.now()}&reqSource=h5&invokeKey=Oex5GmEuqGep1WLC`,
+      url: `//jdjoy.jd.com/common/pet/getCoinChanges?changeDate=${Date.now()}&reqSource=h5&invokeKey=NRp8OPxZMFXmGkaE`,
       // url: "//draw.jdfcloud.com/common/pet/getPetTaskConfig?reqSource=h5",
       method: "GET",
       data: {},
@@ -599,7 +601,7 @@ function TotalBean() {
 }
 function taskUrl(functionId, friendPin) {
   let opt = {
-    url: `//jdjoy.jd.com/common/pet/${functionId}?friendPin=${encodeURI(friendPin)}&reqSource=h5&invokeKey=Oex5GmEuqGep1WLC`,
+    url: `//jdjoy.jd.com/common/pet/${functionId}?friendPin=${encodeURI(friendPin)}&reqSource=h5&invokeKey=NRp8OPxZMFXmGkaE`,
     // url: `//draw.jdfcloud.com/common/pet/getPetTaskConfig?reqSource=h5`,
     method: "GET",
     data: {},
