@@ -6,7 +6,7 @@ hellworld :  https://github.com/JDHelloWorld/jd_scripts.git
 
 panghu ： https://github.com/panghu999/jd_scripts.git
 
-lxk0309 ： https://github.com/chinnkarahoi/jd_scripts
+shuff ： https://github.com/shufflewzc/faker2
 
 yuannian : https://github.com/yuannian1112/jd_scripts.git
 
