@@ -16,6 +16,8 @@ a00108 : https://github.com/a00108/dd
 
 photonmang ： https://github.com/photonmang/quantumultX
 
+jiulan :  https://github.com/jiulan/platypus.git
+
 wulove : https://github.com/wulove/my_scripts/tree/master
 
 Weoux : https://github.com/Wenmoux/scripts
@@ -31,7 +33,5 @@ panghu : https://github.com/panghu999/panghu.git
 Ariszy : https://github.com/Ariszy/Private-Script.git
 
 龙王 : https://github.com/longzhuzhu/nianyu
-
-Choicc : https://github.com/Choicc/MyActions
 
 hundun : https://github.com/whyour/hundun.git
